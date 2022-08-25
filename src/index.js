@@ -1,10 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.less";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { init } from "@antmjs/vantui";
+import {
+  defineCustomElements,
+  applyPolyfills,
+} from "@tarojs/components/loader";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+init();
+applyPolyfills().then(function () {
+  defineCustomElements(window);
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />

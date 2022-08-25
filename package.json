@@ -3,16 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antmjs/plugin-vantui": "^1.21.2",
+    "@antmjs/vantui": "^1.9.21",
+    "@craco/craco": "^6.4.5",
+    "@tarojs/components": "^3.5.3",
+    "@tarojs/taro": "^3.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "craco-less": "^2.0.0",
+    "customize-cra": "^1.0.0",
     "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,7 +29,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-undef": "off",
+      "no-restricted-globals": "off",
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -34,5 +47,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@antmjs/babel-preset": "^1.21.2",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
+    "postcss-pxtorem": "^6.0.0",
+    "postcss-pxtransform": "^3.5.4"
   }
 }
